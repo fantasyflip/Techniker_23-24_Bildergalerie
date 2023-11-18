@@ -15,7 +15,6 @@ function generateImageElements(amount) {
   }
 }
 
-//Initial Theme Setup
 window.addEventListener("load", function () {
   generateImageElements(15);
 });
