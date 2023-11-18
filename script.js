@@ -1,0 +1,21 @@
+function generateImageElements(amount) {
+  let document = window.document;
+  let galleryParent = document.getElementById("gallery-wrapper");
+  for (let i = 0; i < amount; i++) {
+    let image = document.createElement("img");
+
+    fetch(`https://source.unsplash.com/user/fantasyflip`).then((response) => {
+      image.src = response.url;
+      image.alt =
+        "Random image from unsplash by user Philipp Katzenberger - " + i;
+      image.classList.add("gallery-item");
+
+      galleryParent.appendChild(image);
+    });
+  }
+}
+
+//Initial Theme Setup
+window.addEventListener("load", function () {
+  generateImageElements(20);
+});
