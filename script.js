@@ -17,5 +17,11 @@ function generateImageElements(amount) {
 
 //Initial Theme Setup
 window.addEventListener("load", function () {
-  generateImageElements(20);
+  generateImageElements(15);
+});
+
+window.addEventListener("scroll", function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+    generateImageElements(10);
+  }
 });
